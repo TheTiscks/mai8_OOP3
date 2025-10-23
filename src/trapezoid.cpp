@@ -57,7 +57,6 @@ Point Trapezoid::geometricCenter() const {
 
 double Trapezoid::area() const {
     validate();
-
     double area = 0;
     for (size_t i = 0; i < VERTEX_COUNT; ++i) {
         size_t j = (i + 1) % VERTEX_COUNT;
