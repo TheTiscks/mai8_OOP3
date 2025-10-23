@@ -21,9 +21,6 @@ namespace GeometryUtils {
 }
 
 class Figure {
-protected:
-    std::vector<Point> vertices;
-
 public:
     virtual ~Figure() = default;
     virtual Point geometricCenter() const = 0;
@@ -32,6 +29,10 @@ public:
     virtual void read(std::istream& is) = 0;
     virtual std::shared_ptr<Figure> clone() const = 0;
     virtual bool equals(const Figure& other) const = 0;
+    virtual size_t vertexCount() const = 0;
+    virtual Point getVertex(size_t index) const = 0;
+    virtual void setVertex(size_t index, const Point& p) = 0;
+    virtual void clearVertices() = 0;
     virtual operator double() const;
     bool operator==(const Figure& other) const;
     bool operator!=(const Figure& other) const;
